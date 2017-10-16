@@ -5,18 +5,12 @@
 </template>
 
 <script>
-  import server from './../server'
-
   export default {
     name: 'HelloWorld',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App',
-        auth: server.authenticator
+        msg: 'Welcome to Your Vue.js App'
       }
-    },
-    mounted () {
-      console.log(this.auth)
     }
   }
-  </script>
+</script>
