@@ -4,6 +4,12 @@ import { default as HttpClient, Field } from 'restfulpy'
 
 import { BASE_URL } from './settings.js'
 
+class Server extends HttpClient {
+  constructor () {
+    super(`${BASE_URL}/apiv1`)
+  }
+}
+
 Field.prototype.createValidator = function (options) {
   options = Object.assign({}, this, options || {})
   let result = {}
@@ -32,4 +38,4 @@ Field.prototype.createValidator = function (options) {
 }
 
 // Creating a single instance of restfulpy-client naming it server!
-export default new HttpClient(`${BASE_URL}/apiv1`)
+export default new Server()
